@@ -1,0 +1,25 @@
+{
+  "name": "bloggily",
+  "version": "1.0.0",
+  "description": "Bloggily is a webapp that lets users create and manage articles for their blog. It's built on the RESTful paradigm.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hadicodes/Bloggily.git"
+  },
+  "author": "Hadi Yousufi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hadicodes/Bloggily/issues"
+  },
+  "homepage": "https://github.com/hadicodes/Bloggily#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.9"
+  }
+}
