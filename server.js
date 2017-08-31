@@ -17,20 +17,33 @@ const blogSchema = new mongoose.Schema({
     image: String,
     body: String,
     created: {
-        type: date,
+        type: Date,
         default: Date.now
     }
 });
 const Blog = mongoose.model("Blog", blogSchema);
 
-// Restful Routes
 
-app.listen(process.env.PORT, process.env.IP, function () {
-    console.log('SUCCESS SERVER running on PORT')
+Blog.create({
+    title: "Smile blog",
+    image: "https://www.haskell.org/happy/Happy.gif",
+    body: "This is Happy dude who loves happiness"
+});
+
+// Restful Routes
+app.get("/", function(req, res){
+    Blog.find({}, function(err, blogs){
+        if (err) {
+            console.log("ERROR!")
+        } else {
+            res.render("index", {blogs: blogs});
+        }
+    })
 });
 
 
-// title
-// image
-// body
-// created
+
+
+app.listen(process.env.PORT || 3000, function () {
+    console.log('SUCCESS SERVER running on PORT')
+});
