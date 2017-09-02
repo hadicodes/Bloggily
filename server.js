@@ -24,11 +24,11 @@ const blogSchema = new mongoose.Schema({
 const Blog = mongoose.model("Blog", blogSchema);
 
 
-Blog.create({
-    title: "Smile blog",
-    image: "https://www.haskell.org/happy/Happy.gif",
-    body: "This is Happy dude who loves happiness"
-});
+// Blog.create({
+//     title: "Smile blog",
+//     image: "https://www.haskell.org/happy/Happy.gif",
+//     body: "This is Happy dude who loves happiness"
+// });
 
 // Restful Routes
 app.get("/", function(req, res){
