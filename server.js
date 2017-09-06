@@ -32,6 +32,11 @@ const Blog = mongoose.model("Blog", blogSchema);
 
 // Restful Routes
 app.get("/", function(req, res){
+    res.redirect("/blogs");
+});
+
+
+app.get("/blogs", function(req, res){
     Blog.find({}, function(err, blogs){
         if (err) {
             console.log("ERROR!")
@@ -42,6 +47,9 @@ app.get("/", function(req, res){
 });
 
 
+app.get('/blogs/new', function (req, res){
+    res.render("new");
+});
 
 
 app.listen(process.env.PORT || 3000, function () {
