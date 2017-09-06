@@ -30,25 +30,42 @@ const Blog = mongoose.model("Blog", blogSchema);
 //     body: "This is Happy dude who loves happiness"
 // });
 
-// Restful Routes
-app.get("/", function(req, res){
+//****** RESTFUL ROUTES********
+//*****************************
+// INDEX ROUTE
+app.get("/", function (req, res) {
     res.redirect("/blogs");
 });
 
-
-app.get("/blogs", function(req, res){
-    Blog.find({}, function(err, blogs){
+// INDEX ROUTE
+app.get("/blogs", function (req, res) {
+    Blog.find({}, function (err, blogs) {
         if (err) {
             console.log("ERROR!")
         } else {
-            res.render("index", {blogs: blogs});
+            res.render("index", {
+                blogs: blogs
+            });
         }
     })
 });
 
-
-app.get('/blogs/new', function (req, res){
+// NEW ROUTE
+app.get('/blogs/new', function (req, res) {
     res.render("new");
+});
+
+// CREATE ROUTE
+app.post("/blogs", function (req, res) {
+    // create blog
+    Blog.create(req.body.blog, function (err, newBlog) {
+        if (err) {
+            res.render("new");
+        } else {
+            // Then redirect to index
+            res.redirect("/blogs");
+        }
+    });
 });
 
 
