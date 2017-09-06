@@ -2,23 +2,23 @@
 
 
 <!-- Form register -->
-<form class="container">
+<form class="container" action="/blogs" method="POST">
     <h3 class="h3  mb-4">Add A New Blog</h3>
 
     <div class="md-form">
         <i class="fa fa-header prefix grey-text"></i>
-        <input type="text" id="orangeForm-name" class="form-control">
+        <input type="text" id="orangeForm-name" class="form-control" name="blog[title]">
         <label for="orangeForm-name">Title</label>
     </div>
     <div class="md-form">
         <i class="fa fa-file-image-o prefix grey-text"></i>
-        <input type="text" id="orangeForm-email" class="form-control">
+        <input type="text" id="orangeForm-email" class="form-control" name="blog[image]">
         <label for="orangeForm-email">Image</label>
     </div>
 
     <div class="md-form">
         <i class="fa fa-list-alt prefix grey-text"></i>
-        <input type="text" id="orangeForm-pass" class="form-control">
+        <input type="text" id="orangeForm-pass" class="form-control" name="blog[body]">
         <label for="orangeForm-pass">Body</label>
     </div>
 
