@@ -68,6 +68,10 @@ app.post("/blogs", function (req, res) {
     });
 });
 
+// SHOW ROUTE
+app.get("/blogs/:id", function(req, res){
+    res.send("show page");
+});
 
 app.listen(process.env.PORT || 3000, function () {
     console.log('SUCCESS SERVER running on PORT')
