@@ -1,20 +1,27 @@
 /* YOUR CUSTOM STYLES */
-body > nav{
-    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);     
+
+body>nav {
+    background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
 }
 
-body > form {
+body>form {
     margin-top: 60px;
 }
 
 form.container {
-    width: 50%;   
+    width: 50%;
 }
-button.btn.btn-deep-orange.waves-effect.waves-light{
+
+button.btn.btn-deep-orange.waves-effect.waves-light {
     font-weight: 500;
 }
 
-img{
-    width: 300px;
+div.card {
+    width: 16em;
 }
 
+h1.container {
+    margin-top: 30px;
+    margin-right: 130px;
+    margin-bottom: 25px;
+}

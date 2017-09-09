@@ -1,0 +1,22 @@
+<% include  ./partials/header %>
+
+<!--Card-->
+<div class="card">
+        
+            <!--Card image-->
+            <img class="img-fluid" src="<%= blog.image %>" alt="Card image cap">
+        
+            <!--Card content-->
+            <div class="card-body">
+                <!--Title-->
+                <h4 class="card-title"><%= blog.title %></h4>
+                <!--Text-->
+                <p class="card-text"><%= blog.body %></p>
+            </div>
+        
+        </div>
+        <!--/.Card-->
+
+<% include  ./partials/footer %>
+
+

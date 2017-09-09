@@ -69,8 +69,18 @@ app.post("/blogs", function (req, res) {
 });
 
 // SHOW ROUTE
-app.get("/blogs/:id", function(req, res){
-    res.send("show page");
+app.get("/blogs/:id", function (req, res) {
+    // find the campground with the provided id
+    Blog.findById(req.params.id, function (err, foundBlog) {
+        if (err) {
+            console.log(err);
+        } else {
+            // render the show page for that campground
+            res.render('show', {
+                blog: foundBlog
+            });
+        }
+    });
 });
 
 app.listen(process.env.PORT || 3000, function () {
