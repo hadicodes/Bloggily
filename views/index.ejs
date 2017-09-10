@@ -21,8 +21,11 @@
                         <%= blog.title %>
                     </h4>
                     <!--Text-->
-                    <p class="card-text"></p>
+                    <p class="card-text"><%= blog.body.substring(0,100) %>...</p>
                     <a href="/blogs/<%= blog._id %>" class="btn btn-primary">Read More</a>
+                    <p>
+                        <%= blog.created.toDateString() %>
+                    </p>
                 </div>
 
             </div>
