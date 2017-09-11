@@ -1,1 +1,34 @@
-<h2>Edit page</h2>
+
+<% include  ./partials/header %>
+
+<!-- Form register -->
+<form class="container" action="/blogs" method="POST">
+    <h3 class="h3  mb-4">Edit a Blog</h3>
+
+    <div class="md-form">
+        <i class="fa fa-header prefix grey-text"></i>
+        <input type="text" id="orangeForm-name" class="form-control" name="blog[title]">
+        <label for="orangeForm-name">Title</label>
+    </div>
+    <div class="md-form">
+        <i class="fa fa-file-image-o prefix grey-text"></i>
+        <input type="text" id="orangeForm-email" class="form-control" name="blog[image]">
+        <label for="orangeForm-email">Image</label>
+    </div>
+
+    <div class="md-form">
+        <i class="fa fa-list-alt prefix grey-text"></i>
+        <textarea type="text" id="orangeForm-pass" class="md-textarea form-control" name="blog[body]"></textarea>
+        <label for="orangeForm-pass">Blog Post Text</label>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-deep-orange">Submit Blog</button>
+    </div>
+
+</form>
+<!-- Form register -->
+
+<% include  ./partials/footer %>
+
+
