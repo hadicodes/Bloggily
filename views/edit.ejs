@@ -7,19 +7,19 @@
 
     <div class="md-form">
         <i class="fa fa-header prefix grey-text"></i>
-        <input type="text" id="orangeForm-name" class="form-control" name="blog[title]">
+        <input type="text" id="orangeForm-name" class="form-control" name="blog[title]" value="<%= blog.title %>">
         <label for="orangeForm-name">Title</label>
     </div>
     <div class="md-form">
         <i class="fa fa-file-image-o prefix grey-text"></i>
-        <input type="text" id="orangeForm-email" class="form-control" name="blog[image]">
+        <input type="text" id="orangeForm-email" class="form-control" name="blog[image]" value="<%= blog.image %>">
         <label for="orangeForm-email">Image</label>
     </div>
 
     <div class="md-form">
         <i class="fa fa-list-alt prefix grey-text"></i>
-        <textarea type="text" id="orangeForm-pass" class="md-textarea form-control" name="blog[body]"></textarea>
-        <label for="orangeForm-pass">Blog Post Text</label>
+        <textarea type="text" id="orangeForm-pass" class="md-textarea form-control" name="blog[body]"><%= blog.body %></textarea>
+        <label for="orangeForm-pass"></label>
     </div>
 
     <div class="text-center">
