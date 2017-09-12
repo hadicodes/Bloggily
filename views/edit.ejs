@@ -2,7 +2,7 @@
 <% include  ./partials/header %>
 
 <!-- Form register -->
-<form class="container" action="/blogs" method="POST">
+<form class="container" action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
     <h3 class="h3  mb-4">Edit <%= blog.title%> Blog</h3>
 
     <div class="md-form">

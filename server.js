@@ -2,7 +2,8 @@ const mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     express = require('express'),
     app = express(),
-    ejsLint = require('ejs-lint');
+    ejsLint = require('ejs-lint'),
+    methodOverride = require('method-override');
 
 
 // mongoose configuration
@@ -12,6 +13,8 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+// override with POST having ?_method=DELETE 
+app.use(methodOverride('_method'));
 
 // Mongoose Model Config
 const blogSchema = new mongoose.Schema({
@@ -99,6 +102,13 @@ app.get("/blogs/:id/edit", function (req, res) {
             });
         }
     });
+});
+
+
+// Update Route
+app.put("/blogs/:id", function (req, res) {
+    // Dog.findByIdAndUpdate()
+    res.send("it works")
 });
 
 
