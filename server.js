@@ -1,7 +1,9 @@
 const mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     express = require('express'),
-    app = express();
+    app = express(),
+    ejsLint = require('ejs-lint');
+
 
 // mongoose configuration
 mongoose.connect('mongodb://localhost/bloggily');
@@ -87,8 +89,16 @@ app.get("/blogs/:id", function (req, res) {
 
 
 // EDIT ROUTE
-app.get("/blogs/:id/edit", function(req, res){
-    res.render("edit");
+app.get("/blogs/:id/edit", function (req, res) {
+    Blog.findById(req.params.id, function (err, foundBlog) {
+        if (err) {
+            res.redirect("/blogs");
+        } else {
+            res.render("edit", {
+                blog: foundBlog
+            });
+        }
+    });
 });
 
 

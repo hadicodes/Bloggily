@@ -1,22 +1,27 @@
 <% include  ./partials/header %>
 
-<!--Card-->
-<div class="card">
-        
+    <div class="container">
+        <!--Card-->
+        <div class="card">
+
             <!--Card image-->
             <img class="img-fluid" src="<%= blog.image %>" alt="Card image cap">
-        
+
             <!--Card content-->
             <div class="card-body">
                 <!--Title-->
-                <h4 class="card-title"><%= blog.title %></h4>
+                <h4 class="card-title">
+                    <%= blog.title %>
+                </h4>
                 <!--Text-->
-                <p class="card-text"><%- blog.body %></p>
+                <p class="card-text">
+                    <%- blog.body %>
+                </p>
+                <a href="/blogs/<%= blog._id%>/edit" class="btn btn-primary">Edit this blog</a>
             </div>
-        
+
         </div>
         <!--/.Card-->
+    </div>
 
-<% include  ./partials/footer %>
-
-
+    <% include  ./partials/footer %>
