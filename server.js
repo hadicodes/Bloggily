@@ -107,8 +107,13 @@ app.get("/blogs/:id/edit", function (req, res) {
 
 // Update Route
 app.put("/blogs/:id", function (req, res) {
-    // Dog.findByIdAndUpdate()
-    res.send("it works")
+    Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
+        if (err) {
+            res.redirect("/blogs");
+        } else {
+            res.redirect("/blogs/" + req.params.id);
+        }
+    });
 });
 
 
