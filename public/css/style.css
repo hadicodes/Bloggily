@@ -8,6 +8,10 @@ body>form {
     margin-top: 60px;
 }
 
+main{
+    margin-top: 3rem!important;
+}
+
 form.container {
     width: 50%;
 }
@@ -16,9 +20,9 @@ button.btn.btn-deep-orange.waves-effect.waves-light {
     font-weight: 500;
 }
 
-div.card {
+/* div.card {
     width: 16em;
-}
+} */
 
 h1.container {
     margin-top: 30px;
