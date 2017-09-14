@@ -1,6 +1,8 @@
 <% include  ./partials/header %>
     <main>
-        <h1 class="container"><%= blog.title%> </h1>
+        <h1 class="container">
+            <%= blog.title%>
+        </h1>
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 ol-md-6 mb-4">
@@ -21,7 +23,9 @@
                             </p>
                             <a href="/blogs/<%= blog._id%>/edit" class="btn btn-primary">Edit this blog</a>
                         </div>
-
+                        <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-deep-orange">Delete</button>
+                        </form>
                     </div>
                     <!--/.Card-->
                 </div>
