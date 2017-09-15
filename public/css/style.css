@@ -29,3 +29,7 @@ h1.container {
     margin-right: 130px;
     margin-bottom: 25px;
 }
+
+#delete {
+    display: inline;
+}

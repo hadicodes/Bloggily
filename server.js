@@ -2,6 +2,7 @@ const mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     express = require('express'),
     app = express(),
+    expressSanitizer = require('express-sanitizer'),
     ejsLint = require('ejs-lint'),
     methodOverride = require('method-override');
 
@@ -13,6 +14,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(expressSanitizer());
 // override with POST having ?_method=DELETE 
 app.use(methodOverride('_method'));
 
